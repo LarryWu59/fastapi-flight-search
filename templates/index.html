@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>機票查詢</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    form { margin-top: 1rem; }
+    label { display: block; margin-bottom: 0.5rem; }
+    input { padding: 0.5rem; width: 200px; margin-bottom: 1rem; }
+    button { padding: 0.5rem 1rem; }
+  </style>
+</head>
+<body>
+  <h1>查詢機票價格</h1>
+  <form method="post" action="/search">
+    <label>
+      出發地 (IATA code):
+      <input type="text" name="origin" placeholder="TPE" required>
+    </label>
+    <label>
+      目的地 (IATA code):
+      <input type="text" name="destination" placeholder="SEA" required>
+    </label>
+    <label>
+      出發月份 (YYYY-MM):
+      <input type="text" name="month" placeholder="2025-08" required>
+    </label>
+    <button type="submit">開始查詢</button>
+  </form>
+</body>
+</html>
