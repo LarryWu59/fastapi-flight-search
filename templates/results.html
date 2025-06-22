@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>查詢結果</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    h2 { margin-bottom: 1rem; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 0.5rem; }
+    a { display: inline-block; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h2>查詢結果</h2>
+  <ul>
+    {% for flight in flights %}
+      <li>
+        {{ flight.departure_at }} |
+        {{ flight.flight_number }} |
+        {{ flight.airline_zh }} ({{ flight.airline_en }}) |
+        NT${{ "{:,}".format(flight.price) }}
+      </li>
+    {% else %}
+      <li>目前沒有符合條件的航班。</li>
+    {% endfor %}
+  </ul>
+  <a href="/">« 回首頁</a>
+</body>
+</html>
